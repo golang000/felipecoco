@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 2 - Conceitos Práticos em Golang</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      padding-top: 70px; /* Espaço para a navbar */
+      min-height: 100vh;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 5%;
+      background-color: #6a0dad; /* Cor roxa */
+      color: #fff;
+      height: 70px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 400;
+      font-size: 14px;
+      padding: 10px 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: #8b3db9; /* Tom de roxo mais escuro */
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      color: #333;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+      margin-top: 10px;
+      border-radius: 4px;
+    }
+
+    .dropdown-content a {
+      color: #333;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      transition: background-color 0.3s ease;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Seção Hero */
+    .hero {
+      background-color: #6a0dad; /* Cor roxa */
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    /* Seção de Conteúdo */
+    .content {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .content h2 {
+      font-size: 2rem;
+      color: #6a0dad;
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .content code {
+      background-color: #f0f0f0;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    pre {
+      background-color: #f0f0f0;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    /* Estilo para o vídeo */
+    .video-section {
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .video-placeholder {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      background-color: #ddd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #666;
+      font-size: 1.5rem;
+      border-radius: 8px;
+      margin: 0 auto;
+    }
+
+    /* Rodapé */
+    footer {
+      padding: 20px;
+      background-color: #333;
+      color: white;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li class="dropdown">
+          <a href="#modulos" class="dropbtn">Módulos</a>
+          <div class="dropdown-content">
+            <a href="modulo-1.html">Módulo 1</a>
+            <a href="modulo-2.html">Módulo 2</a>
+            <a href="modulo-3.html">Módulo 3</a>
+          </div>
+        </li>
+        <li><a href="aplicativo.html">Aplicativo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Seção Hero -->
+  <section class="hero">
+    <h1>Módulo 2: Conceitos Práticos em Golang</h1>
+    <p>Aprofunde-se nos exemplos práticos e aprenda como usar loops, condicionais, arrays, e mais.</p>
+  </section>
+
+  <!-- Seção de Conteúdo -->
+  <section class="content">
+    <h2>Sobre este Módulo</h2>
+    <p>Neste módulo, você aprenderá a aplicar os conceitos básicos de Golang em exemplos práticos. Vamos explorar loops, condicionais, arrays, e como usá-los para criar programas eficientes e funcionais.</p>
+
+    <!-- Espaço para o vídeo -->
+    <div class="video-section">
+      <div class="video-placeholder"><iframe width="560" height="315" src="https://www.youtube.com/embed/Gh4KmEkxoHQ?si=w7_lUSF1HypGlun9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    </div>
+
+    <h2>Loops em Go</h2>
+    <p>O loop <code>for</code> é a única estrutura de loop em Go, mas ele é poderoso o suficiente para cobrir todos os casos:</p>
+    <pre><code>for i := 0; i < 10; i++ {
+    fmt.Println(i)
+}</code></pre>
+    <p>O exemplo acima imprime os números de 0 a 9.</p>
+
+    <h3>Loop <code>while</code> em Go</h3>
+    <p>Embora Go não tenha um loop <code>while</code> explícito, você pode simular um usando o loop <code>for</code>:</p>
+    <pre><code>i := 0
+for i < 10 {
+    fmt.Println(i)
+    i++
+}</code></pre>
+    <p>Esse exemplo faz o mesmo que um loop <code>while</code> faria em outras linguagens.</p>
+
+    <h2>Condicionais</h2>
+    <p>As estruturas condicionais em Go são similares às de outras linguagens:</p>
+    <pre><code>if x > 10 {
+    fmt.Println("x é maior que 10")
+} else if x == 10 {
+    fmt.Println("x é igual a 10")
+} else {
+    fmt.Println("x é menor que 10")
+}</code></pre>
+    <p>Você pode encadear múltiplas condições com <code>else if</code> e fornecer um bloco padrão com <code>else</code>.</p>
+
+    <h2>Arrays e Slices</h2>
+    <p>Arrays em Go têm um tamanho fixo, enquanto slices são mais flexíveis:</p>
+    <pre><code>var arr [5]int // Array de 5 inteiros
+arr[0] = 1
+fmt.Println(arr)</code></pre>
+    <p>Para usar slices, você pode fazer:</p>
+    <pre><code>slice := []int{1, 2, 3, 4, 5}
+fmt.Println(slice)</code></pre>
+    <p>Slices são usados com mais frequência em Go devido à sua flexibilidade.</p>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2024 Curso de Golang. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>

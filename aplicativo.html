@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicativos - Site Golang</title>
+    <style>
+        /* CSS Embutido para a página */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .navbar {
+            background-color: #6200ea;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .navbar .logo {
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: white;
+            color: #333;
+            min-width: 160px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .dropdown-content a {
+            color: #333;
+            padding: 10px 16px;
+            text-decoration: none;
+            display: block;
+        }
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+        .content {
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #6200ea;
+        }
+        .download-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #6200ea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #6200ea;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Site Golang</a>
+        <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li class="dropdown">
+                <a href="#" class="dropbtn">Módulos</a>
+                <div class="dropdown-content">
+                    <a href="modulo-1.html">Módulo 1</a>
+                    <a href="modulo-2.html">Módulo 2</a>
+                    <a href="modulo-3.html">Módulo 3</a>
+                </div>
+            </li>
+            <li><a href="aplicativos.php">Aplicativos</a></li>
+        </ul>
+    </nav>
+
+    <main class="content">
+        <h1>Aplicativos em Golang</h1>
+        <p>Bem-vindo à seção de aplicativos em Golang! Aqui, vamos explorar um aplicativo prático de criptografia de arquivos feito em Go.</p>
+
+        <h2>Como Funciona o Aplicativo de Criptografia</h2>
+        <p>O aplicativo de criptografia permite que você proteja seus arquivos usando uma senha de 4 dígitos. Ele utiliza o algoritmo AES para criptografar e descriptografar arquivos, garantindo a segurança dos seus dados.</p>
+
+        <h3>Funcionalidades Principais:</h3>
+        <ul>
+            <li>Criptografa arquivos de texto usando uma senha de 4 dígitos.</li>
+            <li>Descriptografa arquivos previamente criptografados usando a mesma senha.</li>
+            <li>Salva cópias dos arquivos originais com novos nomes, como <strong>arquivo_criptografado.txt</strong> ou <strong>arquivo_decriptografado.txt</strong>.</li>
+        </ul>
+
+        <h2>Explicação do Código</h2>
+        <p>O aplicativo é escrito em Go e utiliza a biblioteca <strong>Fyne</strong> para a interface gráfica. Veja abaixo a estrutura básica do código:</p>
+        <pre><code>
+// Exemplo de como o código funciona
+package main
+
+import (
+    "crypto/aes"
+    "crypto/cipher"
+    "crypto/rand"
+    "io"
+    "fyne.io/fyne/v2/app"
+    // Importações necessárias para a interface gráfica
+)
+
+// Função principal para executar o aplicativo
+func main() {
+    myApp := app.New()
+    myWindow := myApp.NewWindow("Aplicativo de Criptografia")
+    // Configuração da interface...
+}
+        </code></pre>
+
+        <p>O código utiliza o algoritmo AES para criptografia e descriptografia de dados, e a biblioteca Fyne para criar uma interface gráfica amigável. A senha é preenchida até 16 bytes para se adequar aos requisitos do AES.</p>
+
+        <h2>Baixar o Aplicativo</h2>
+        <p>Você pode baixar o aplicativo clicando no link abaixo:</p>
+        <a href="https://www.mediafire.com/download" class="download-button">Baixar Aplicativo</a>
+
+        <h2>Instalação e Uso</h2>
+        <p>Para usar o aplicativo, siga estas etapas:</p>
+        <ol>
+            <li>Baixe o arquivo executável do aplicativo.</li>
+            <li>Execute o arquivo e siga as instruções na tela.</li>
+            <li>Insira uma senha de 4 dígitos para criptografar ou descriptografar seus arquivos.</li>
+        </ol>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Site Golang. Todos os direitos reservados.</p>
+    </footer>
+</body>
+</html>

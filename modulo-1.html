@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Módulo 1 - Introdução ao Golang</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+      padding-top: 70px; /* Espaço para a navbar */
+      min-height: 100vh;
+    }
+
+    /* Navbar */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 5%;
+      background-color: #6a0dad; /* Cor roxa */
+      color: #fff;
+      height: 70px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 10;
+      border-bottom: 1px solid #ddd;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: 400;
+      font-size: 14px;
+      padding: 10px 15px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: #8b3db9; /* Tom de roxo mais escuro */
+    }
+
+    .dropdown {
+      position: relative;
+    }
+
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      color: #333;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
+      margin-top: 10px;
+      border-radius: 4px;
+    }
+
+    .dropdown-content a {
+      color: #333;
+      padding: 10px 16px;
+      text-decoration: none;
+      display: block;
+      transition: background-color 0.3s ease;
+    }
+
+    .dropdown-content a:hover {
+      background-color: #ddd;
+    }
+
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+    /* Seção Hero */
+    .hero {
+      background-color: #6a0dad; /* Cor roxa */
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+    }
+
+    /* Seção de Conteúdo */
+    .content {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: 20px auto;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .content h2 {
+      font-size: 2rem;
+      color: #6a0dad;
+      margin-bottom: 20px;
+    }
+
+    .content p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    .content code {
+      background-color: #f0f0f0;
+      padding: 2px 4px;
+      border-radius: 4px;
+      font-family: 'Courier New', Courier, monospace;
+    }
+
+    pre {
+      background-color: #f0f0f0;
+      padding: 15px;
+      border-radius: 8px;
+      overflow-x: auto;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    /* Estilo para o vídeo */
+    .video-section {
+      margin: 40px 0;
+      text-align: center;
+    }
+
+    .video-placeholder {
+      width: 100%;
+      max-width: 800px;
+      height: 450px;
+      background-color: #ddd;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #666;
+      font-size: 1.5rem;
+      border-radius: 8px;
+      margin: 0 auto;
+    }
+
+    /* Rodapé */
+    footer {
+      padding: 20px;
+      background-color: #333;
+      color: white;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <ul class="nav-links">
+        <li><a href="index.html">Início</a></li>
+        <li class="dropdown">
+          <a href="#modulos" class="dropbtn">Módulos</a>
+          <div class="dropdown-content">
+            <a href="modulo-1.html">Módulo 1</a>
+            <a href="modulo-2.html">Módulo 2</a>
+            <a href="modulo-3.html">Módulo 3</a>
+          </div>
+        </li>
+        <li><a href="aplicativo.html">Aplicativo</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Seção Hero -->
+  <section class="hero">
+    <h1>Módulo 1: Introdução ao Golang</h1>
+    <p>Comece sua jornada com os fundamentos da linguagem Go.</p>
+  </section>
+
+  <!-- Seção de Conteúdo -->
+  <section class="content">
+    <h2>Sobre este Módulo</h2>
+    <p>Neste módulo, você aprenderá os conceitos básicos de Golang, incluindo a estrutura de um programa, variáveis, tipos de dados, funções básicas e como começar a criar programas eficientes com Go.</p>
+
+    <!-- Espaço para o vídeo -->
+    <div class="video-section">
+      <div class="video-placeholder"><iframe width="560" height="315" src="https://www.youtube.com/embed/dgnuXAlOfYk?si=WkSGYz69888pNtTe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+    </div>
+
+    <h2>Estrutura de um Programa Go</h2>
+    <p>Um programa simples em Go começa com o pacote principal, seguido das importações necessárias e a função <code>main()</code>:</p>
+    <pre><code>package main
+
+import "fmt"
+
+func main() {
+    fmt.Println("Olá, Mundo!")
+}</code></pre>
+    <p>O código acima imprime "Olá, Mundo!" na tela. Vamos detalhar cada parte:</p>
+    <ul>
+      <li><code>package main</code>: Define o pacote principal do programa.</li>
+      <li><code>import "fmt"</code>: Importa o pacote <code>fmt</code>, que fornece funções para formatar e imprimir.</li>
+      <li><code>func main()</code>: A função principal onde a execução do programa começa.</li>
+    </ul>
+
+    <h2>Variáveis e Tipos de Dados</h2>
+    <p>Em Go, as variáveis podem ser declaradas de várias maneiras:</p>
+    <pre><code>var nome string = "Golang"
+idade := 10
+const pi = 3.14</code></pre>
+    <p>Explicando:</p>
+    <ul>
+      <li><code>var nome string = "Golang"</code>: Declara uma variável <code>nome</code> do tipo <code>string</code>.</li>
+      <li><code>idade := 10</code>: Usa a atribuição curta para declarar e inicializar <code>idade</code> com 10.</li>
+      <li><code>const pi = 3.14</code>: Declara uma constante <code>pi</code> com o valor 3.14.</li>
+    </ul>
+
+    <h2>Funções Básicas</h2>
+    <p>Funções são blocos de código que realizam tarefas específicas. São definidas com a palavra-chave <code>func</code>:</p>
+    <pre><code>func soma(a int, b int) int {
+    return a + b
+}</code></pre>
+    <p>A função <code>soma</code> recebe dois inteiros e retorna a soma deles.</p>
+
+    <h2>Outras Funções Importantes</h2>
+    <p>Aqui estão mais exemplos de funções importantes em Go:</p>
+    <h3>Função sem Retorno</h3>
+    <pre><code>func saudacao(nome string) {
+    fmt.Println("Olá, " + nome + "!")
+}</code></pre>
+    <p>A função <code>saudacao</code> recebe um parâmetro <code>nome</code> e imprime uma mensagem de saudação, mas não retorna nenhum valor.</p>
+
+    <h3>Função com Múltiplos Retornos</h3>
+    <pre><code>func dividir(a, b float64) (float64, float64) {
+    quociente := a / b
+    resto := a - (quociente * b)
+    return quociente, resto
+}</code></pre>
+    <p>Em Go, uma função pode retornar múltiplos valores. Aqui, a função <code>dividir</code> retorna o quociente e o resto da divisão.</p>
+
+    <h3>Função Anônima</h3>
+    <pre><code>anon := func() {
+    fmt.Println("Esta é uma função anônima!")
+}
+anon()</code></pre>
+    <p>Funções anônimas são úteis quando você precisa de uma função temporária. O exemplo acima cria e executa uma função anônima.</p>
+  </section>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2024 Curso de Golang. Todos os direitos reservados.</p>
+  </footer>
+</body>
+</html>
